@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>
+        <h1>This page about </h1>
+    </h1>
+
+    <h2>
+        <%=name%>
+    </h2>
+    <!-- <a href="./all">home</a>
+    <a href="./index">about</a> -->
+    <%-include("./partial/temple.ejs")%>
+    <h3>
+        <% if(name) {%>
+        helo
+         <%} %>
+    </h3>
+
+    <!-- if else if -->
+    <!-- <% if(id==10){%>
+        this is id 10
+        <%} else {%>
+            this is  not 
+            <% } %> -->
+            <% if(id===10){%>
+                ths id 
+                <%}else {%>
+                    this is no id
+                    <%}%>
+
+   <!-- for lop          -->
+
+    <% for(let mark of marks){%>
+
+        <%=mark%>
+        <%=marks[mark]%>
+    <%}%>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+
+<%-include("./partials/header.ejs")%>
+
+
+<%-include("./partials/navbar.ejs")%>
+<style>
+    *{
+    margin: 1px;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+form{
+    background-color: rgba(99, 170, 237, 0.856);
+    display: flex;
+    flex-direction: column;
+    padding: 18px 15px;
+    border-radius: 15px;
+}
+
+form h2{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+form label{
+    margin: 7px 0;
+    font-size: 17px;
+    
+}
+
+form input{
+    padding: 8px;
+    background-color: rgba(233, 251, 242, 0.984);
+}
+
+
+
+form button{
+    padding: 8px;
+    background-color: #e8731f;
+    border-radius: 18px;
+    width: 100px;
+    margin: 10px auto 0;
+    cursor: pointer;
+
+}
+</style>
+
+
+
+
+<div class="container">
+    <form method="post">
+        <h2>User Registration</h2>
+      
+        <label for="fname">FullName</label>
+        <input type="text" id="name" placeholder="Your FullName" required name="name">
+        <label for="email">Email</label>
+        <input type="text" class="email" placeholder="Your Email" required name="email">
+     
+        <label for="num">Password</label>
+        <input type="password" id="pass" placeholder="Password" required name="password">
+        <label for="mobile">Mobile No.</label>
+        <input type="num" id="mobile" placeholder="Mobile no." required name="mobile">
+       
+      
+ 
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+   
+
+<%-include("./partials/footer.ejs")%>

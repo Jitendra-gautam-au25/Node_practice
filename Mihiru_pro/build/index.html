@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Costomer Service</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendingEmail(); reset(); return false;">
+            <h2>Online Journey for Customer</h2>
+            <label for="email">Email</label>
+            <input type="text" class="email" placeholder="Your Email" required>
+            <label for="fname">FullName</label>
+            <input type="text" id="name" placeholder="Your FullName" required>
+            <label for="mobile">Mobile No.</label>
+            <input type="num" id="mobile" placeholder="Mobile no." required>
+            <label for="num">Time</label>
+            <input type="num" id="time" placeholder="Time for contact" required>
+            <label for="quiery">Category of request</label>
+            <select id="quiery" name="quiery">
+            <option value="complaint">Complaint</option>
+            <option value="Service Required">Service Required</option>
+            <option value="General Enquiry">General Enquiry</option>
+            <option value="Call ">Call Back</option>
+            </select>
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendingEmail(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "jk426702@gmail.com",
+                Password : "FC515ADD7CD4C42A4C2DC23DA13CFED0DE7D",
+                port:2525,
+                To : "jk426702@gmail.com",
+                From :document.getElementsByClassName("email").value,
+                Subject : "This is the subject",
+                Body : "Name:"+document.getElementById("name").value
+                +"<br> Email:"+document.getElementsByClassName("email").value
+                +"<br> Mobile:"+document.getElementById("mobile").value
+                +"<br> time:"+document.getElementById("time").value
+                +"<br> Quiery:"+document.getElementById("quiery").value
+            }).then(
+                    message => alert(message)
+            );
+         }
+
+    </script>
+</body>
+</html>
